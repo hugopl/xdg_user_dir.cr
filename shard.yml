@@ -1,0 +1,11 @@
+name: xdg
+version: 0.1.0
+
+authors:
+  - Hugo Parente Lima <hugo.pl@gmail.com>
+
+scripts:
+  postinstall: make
+
+crystal: 1.8.2
+license: MIT

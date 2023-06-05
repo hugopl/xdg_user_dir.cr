@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - {os: ubuntu-latest}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: ${{ matrix.crystal }}
+      - name: Install crystal dependencies
+        run: shards install
+      - name: Linter
+        run: crystal tool format --check
+      - name: Compile C code
+        run: make
+      - name: Init XDG user dirs
+        run: xdg-user-dirs-update
+      - name: Run tests
+        run: crystal spec -v
