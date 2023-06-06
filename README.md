@@ -32,6 +32,8 @@ XdgUserDir.lookup(:documents) #=> "/home/joe/Documents"
 XdgUserDir.lookup("MUSIC") #=> "/home/joe/Music"
 ```
 
+As you can check in the [API docs](https://hugopl.github.io/xdg_user_dir.cr/), it's a single function API shard 😁.
+
 ## Contributing
 
 1. Fork it (<https://github.com/hugopl/xdg_user_dir.cr/fork>)
