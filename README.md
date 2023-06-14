@@ -8,6 +8,10 @@ This is useful if you don't want to spawn a new process just to fetch some value
 
 Maybe in the future I could port the C code to Crystal and let this be pure Crystal, a PR with spec tests are welcome.
 
+If your application uses GLib, the functionality provided by this shard is available in the
+[GLib.html#user_special_dir](https://hugopl.github.io/gtk4.cr/GLib.html#user_special_dir(directory:GLib::UserDirectory):Path?-class-method)
+function.
+
 ## Installation
 
 1. Add the dependency to your `shard.yml`:
